@@ -46,43 +46,7 @@
     <!-- Reset Button -->
     <button id="resetBtn" class="btn btn-secondary w-100 mt-2" style="display: none;">Play Again</button>
   </div>
-
-  <script>
-    let randomNumber = Math.floor(Math.random() * 100) + 1;
-    const guessBtn = document.getElementById('guessBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const result = document.getElementById('result');
-    const guessInput = document.getElementById('guessInput');
-
-    // Handle guess button click
-    guessBtn.addEventListener('click', () => {
-      const userGuess = parseInt(guessInput.value);
-
-      if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
-        result.textContent = "Please enter a valid number between 1 and 100!";
-        result.style.color = "red";
-        return;
-      }
-
-      if (userGuess === randomNumber) {
-        result.textContent = "🎉 Congratulations! You guessed it right!";
-        result.style.color = "green";
-        guessBtn.disabled = true;
-        resetBtn.style.display = "block";
-      } else {
-        result.textContent = "❌ Sorry, that's not correct. Try again!";
-        result.style.color = "red";
-      }
-    });
-
-    // Handle reset button click
-    resetBtn.addEventListener('click', () => {
-      randomNumber = Math.floor(Math.random() * 100) + 1; // New number
-      result.textContent = "";
-      guessInput.value = "";
-      guessBtn.disabled = false;
-      resetBtn.style.display = "none";
-    });
-  </script>
-</body>
+        <script src="number.js"></script>
+  
+    </body>
 </html>
